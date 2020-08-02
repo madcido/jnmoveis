@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/jnmoveis/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/jnmoveis/static/js/main.21dc9a6c.chunk.js",
+    "main.js.map": "/jnmoveis/static/js/main.21dc9a6c.chunk.js.map",
+    "runtime-main.js": "/jnmoveis/static/js/runtime-main.551e88cc.js",
+    "runtime-main.js.map": "/jnmoveis/static/js/runtime-main.551e88cc.js.map",
+    "static/js/2.668dae4a.chunk.js": "/jnmoveis/static/js/2.668dae4a.chunk.js",
+    "static/js/2.668dae4a.chunk.js.map": "/jnmoveis/static/js/2.668dae4a.chunk.js.map",
+    "index.html": "/jnmoveis/index.html",
+    "precache-manifest.5b381ceaf521f74bdd59f30d3cd147c5.js": "/jnmoveis/precache-manifest.5b381ceaf521f74bdd59f30d3cd147c5.js",
+    "service-worker.js": "/jnmoveis/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/jnmoveis/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.668dae4a.chunk.js.LICENSE.txt": "/jnmoveis/static/js/2.668dae4a.chunk.js.LICENSE.txt",
+    "static/media/logoG.png": "/jnmoveis/static/media/logoG.2ee3eba6.png",
+    "static/media/slide1G.png": "/jnmoveis/static/media/slide1G.ceea3e3e.png",
+    "static/media/woodG.png": "/jnmoveis/static/media/woodG.9a6ab95d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.551e88cc.js",
+    "static/js/2.668dae4a.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.21dc9a6c.chunk.js"
+  ]
+}
