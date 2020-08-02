@@ -33,7 +33,7 @@ export const Slider = ({
     }
   };
 
-  const prevousSlide = () => {
+  const previousSlide = () => {
     if (slide === 0) {
       setSlide(slides.length - 1);
     } else {
@@ -51,18 +51,18 @@ export const Slider = ({
     const deltaX = e.changedTouches[0].pageX - touchPos;
 
     if (deltaX < 0) {
-      setSlide(slide + 1);
+      nextSlide();
     }
 
     if (deltaX > 0) {
-      setSlide(slide - 1);
+      previousSlide();
     }
   };
 
   return (
     <SliderContainer width={width} height={height}>
       <SliderContent ref={slideRef}>{slides[slide]}</SliderContent>
-      <PreviousButton onClick={prevousSlide} />
+      <PreviousButton onClick={previousSlide} />
       <NextButton onClick={nextSlide} />
       <Bullets total={slides.length} current={slide} />
     </SliderContainer>
