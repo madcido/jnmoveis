@@ -1,25 +1,29 @@
 {
   "files": {
-    "main.css": "/jnmoveis/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/jnmoveis/static/js/main.d3132266.chunk.js",
-    "main.js.map": "/jnmoveis/static/js/main.d3132266.chunk.js.map",
+    "main.css": "/jnmoveis/static/css/main.0f007526.chunk.css",
+    "main.js": "/jnmoveis/static/js/main.0268ce89.chunk.js",
+    "main.js.map": "/jnmoveis/static/js/main.0268ce89.chunk.js.map",
     "runtime-main.js": "/jnmoveis/static/js/runtime-main.551e88cc.js",
     "runtime-main.js.map": "/jnmoveis/static/js/runtime-main.551e88cc.js.map",
-    "static/js/2.668dae4a.chunk.js": "/jnmoveis/static/js/2.668dae4a.chunk.js",
-    "static/js/2.668dae4a.chunk.js.map": "/jnmoveis/static/js/2.668dae4a.chunk.js.map",
+    "static/js/2.4e6ff1a3.chunk.js": "/jnmoveis/static/js/2.4e6ff1a3.chunk.js",
+    "static/js/2.4e6ff1a3.chunk.js.map": "/jnmoveis/static/js/2.4e6ff1a3.chunk.js.map",
     "index.html": "/jnmoveis/index.html",
-    "precache-manifest.3036e0bb14e7e1c52cac22abef0b25fd.js": "/jnmoveis/precache-manifest.3036e0bb14e7e1c52cac22abef0b25fd.js",
+    "precache-manifest.1d88e672ea3f6e67948863fb54fbb544.js": "/jnmoveis/precache-manifest.1d88e672ea3f6e67948863fb54fbb544.js",
     "service-worker.js": "/jnmoveis/service-worker.js",
-    "static/css/main.5ecd60fb.chunk.css.map": "/jnmoveis/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.668dae4a.chunk.js.LICENSE.txt": "/jnmoveis/static/js/2.668dae4a.chunk.js.LICENSE.txt",
-    "static/media/logoG.png": "/jnmoveis/static/media/logoG.2ee3eba6.png",
-    "static/media/slide1G.png": "/jnmoveis/static/media/slide1G.ceea3e3e.png",
-    "static/media/woodG.png": "/jnmoveis/static/media/woodG.9a6ab95d.png"
+    "static/css/main.0f007526.chunk.css.map": "/jnmoveis/static/css/main.0f007526.chunk.css.map",
+    "static/js/2.4e6ff1a3.chunk.js.LICENSE.txt": "/jnmoveis/static/js/2.4e6ff1a3.chunk.js.LICENSE.txt",
+    "static/media/contato.png": "/jnmoveis/static/media/contato.98a73940.png",
+    "static/media/ikea.png": "/jnmoveis/static/media/ikea.17fb00a1.png",
+    "static/media/jack-daniels.png": "/jnmoveis/static/media/jack-daniels.9af9fdaf.png",
+    "static/media/logo.png": "/jnmoveis/static/media/logo.2ee3eba6.png",
+    "static/media/slide1-1.png": "/jnmoveis/static/media/slide1-1.ceea3e3e.png",
+    "static/media/slide2-1.png": "/jnmoveis/static/media/slide2-1.9909bf91.png",
+    "static/media/wood.png": "/jnmoveis/static/media/wood.9a6ab95d.png"
   },
   "entrypoints": [
     "static/js/runtime-main.551e88cc.js",
-    "static/js/2.668dae4a.chunk.js",
-    "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.d3132266.chunk.js"
+    "static/js/2.4e6ff1a3.chunk.js",
+    "static/css/main.0f007526.chunk.css",
+    "static/js/main.0268ce89.chunk.js"
   ]
 }
