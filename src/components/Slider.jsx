@@ -5,10 +5,15 @@ export const Slider = ({
   width = "100%",
   height = "100px",
   slides = ["eeeta pora", "mas q blz"],
+  withBox = false,
+  autoSlide = true,
+  children,
 }) => {
   React.useEffect(() => {
-    const id = setInterval(nextSlide, 8000);
-    return () => clearInterval(id);
+    if (autoSlide) {
+      const id = setInterval(nextSlide, 8000);
+      return () => clearInterval(id);
+    }
   });
 
   React.useEffect(() => {
@@ -62,6 +67,7 @@ export const Slider = ({
   return (
     <SliderContainer width={width} height={height}>
       <SliderContent ref={slideRef}>{slides[slide]}</SliderContent>
+      {withBox ? <SliderBox>{children}</SliderBox> : null}
       <PreviousButton onClick={previousSlide} />
       <NextButton onClick={nextSlide} />
       <Bullets total={slides.length} current={slide} />
@@ -90,6 +96,21 @@ const SliderContainer = styled.div`
 const SliderContent = styled.div`
   width: 100%;
   height: 100%;
+`;
+
+const SliderBox = styled.div`
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  border-radius: 4px;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 300;
 `;
 
 const Button = styled.div`
