@@ -25,6 +25,7 @@ const LateralBorder = styled.div`
   border-left: 1px solid #fff;
   border-right: 1px solid #fff;
   opacity: 0.3;
+  z-index: -1;
 `;
 
 const BottomBorder = styled.div`
@@ -36,4 +37,5 @@ const BottomBorder = styled.div`
   transform: translate(-50%, -50%);
   border-bottom: 1px solid #fff;
   opacity: 0.3;
+  z-index: -1;
 `;

@@ -1,21 +1,21 @@
 import React from "react";
-import { Slide, ModalSlide, TextSlide } from "../components/Slide";
+import { Slide, TextSlide } from "../components/Slide";
 import slide11 from "../assets/slide1-1.png";
 import slide21 from "../assets/slide2-1.png";
 
 export const firstSlider = [
-  <Slide image={slide11} />,
+  <Slide image={slide11}>
+    <p>Um novo conceito em móveis planejados</p>
+  </Slide>,
   "mim dá mais um",
   "q beleeeza",
 ];
 
 export const secondSlider = [
-  <ModalSlide
-    image={slide21}
-    title="Sob Medida"
-    subtitle="Peças totalmente personalizadas"
-    content="blablabla dentro do modal"
-  />,
+  <Slide image={slide21} modalContent="blablabla dentro do modal">
+    <p>Sob Medida</p>
+    <p>Peças totalmente personalizadas</p>
+  </Slide>,
   "mim dá mais um",
   "q beleeeza",
 ];

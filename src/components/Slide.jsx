@@ -1,26 +1,28 @@
 import React from "react";
 import styled from "styled-components";
+import chevron from "../assets/chevron.png";
 
-export const ModalSlide = ({ title, subtitle, content, image }) => {
+export const Slide = ({ image, modalContent, children }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <Slide image={image}>
-      <Box>
-        <p>{title}</p>
-        <p>{subtitle}</p>
-        <OpenButton onClick={() => setIsOpen(true)}>Saiba mais</OpenButton>
-      </Box>
+    <Container image={image}>
+      <FloatingBox>
+        {children}
+        {modalContent ? (
+          <OpenButton onClick={() => setIsOpen(true)}>Saiba mais</OpenButton>
+        ) : null}
+      </FloatingBox>
       {isOpen ? (
         <>
           <Overlay onClick={() => setIsOpen(false)} />
           <Modal>
             <CloseButton onClick={() => setIsOpen(false)} />
-            {content}
+            {modalContent}
           </Modal>
         </>
       ) : null}
-    </Slide>
+    </Container>
   );
 };
 
@@ -33,7 +35,7 @@ export const TextSlide = styled.div`
   }
 `;
 
-export const Slide = styled.div`
+const Container = styled.div`
   width: 100%;
   height: 100%;
   background-image: ${({ image }) => `url(${image})`};
@@ -43,13 +45,10 @@ export const Slide = styled.div`
 
 const OpenButton = styled.p`
   cursor: pointer;
-  border-bottom: 1px solid transparent;
-  &:hover {
-    border-color: #fff;
-  }
+  border-bottom: 1px solid #fff;
 `;
 
-const Box = styled.div`
+const FloatingBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,12 +91,34 @@ const Modal = styled.div`
   box-shadow: 0 4px 20px #111;
 `;
 
-const CloseButton = styled.div`
+const CloseButton = () => {
+  return (
+    <CloseButtonContainer>
+      <ChevronRight />
+      <ChevronLeft />
+    </CloseButtonContainer>
+  );
+};
+
+const CloseButtonContainer = styled.div`
   cursor: pointer;
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 20px;
-  height: 20px;
-  background-color: green;
+`;
+
+const ChevronRight = styled.img.attrs({ src: chevron, alt: "" })`
+  width: 16px;
+  filter: invert(1);
+  transform: rotate(-90deg);
+  position: relative;
+  left: 4px;
+`;
+
+const ChevronLeft = styled.img.attrs({ src: chevron, alt: "" })`
+  width: 16px;
+  filter: invert(1);
+  transform: rotate(90deg);
+  position: relative;
+  right: 4px;
 `;

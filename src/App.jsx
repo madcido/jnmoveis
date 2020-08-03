@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import * as data from "./data";
 import { Header } from "./components/Header";
 import { Slider } from "./components/Slider";
@@ -10,11 +11,9 @@ import { Spacer } from "./components/Common";
 
 export const App = () => {
   return (
-    <>
+    <PageWrapper>
       <Header>
-        <Slider width="100%" height="400px" slides={data.firstSlider} withBox>
-          <p>Um novo conceito em móveis planejados</p>
-        </Slider>
+        <Slider width="100%" height="400px" slides={data.firstSlider} />
       </Header>
       <Bridge />
       <Spacer size={60} />
@@ -29,11 +28,22 @@ export const App = () => {
       <Spacer size={60} />
       <Section title="O que dizem sobre nós">
         <Box width="120%" extraX="60px" extraY="40px">
-          <Slider width="260px" height="220px" slides={data.thirdSlider} />
+          <Slider
+            width="260px"
+            height="220px"
+            slides={data.thirdSlider}
+            arrowPosition="-100px"
+          />
         </Box>
       </Section>
       <Spacer size={60} />
       <Footer />
-    </>
+    </PageWrapper>
   );
 };
+
+const PageWrapper = styled.div`
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+`;

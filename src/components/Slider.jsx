@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import chevron from "../assets/chevron.png";
 
 export const Slider = ({
   width = "100%",
   height = "100px",
   slides = ["eeeta pora", "mas q blz"],
-  withBox = false,
   autoSlide = true,
-  children,
+  arrowPosition,
 }) => {
   React.useEffect(() => {
     if (autoSlide) {
@@ -67,9 +67,8 @@ export const Slider = ({
   return (
     <SliderContainer width={width} height={height}>
       <SliderContent ref={slideRef}>{slides[slide]}</SliderContent>
-      {withBox ? <SliderBox>{children}</SliderBox> : null}
-      <PreviousButton onClick={previousSlide} />
-      <NextButton onClick={nextSlide} />
+      <PreviousButton onClick={previousSlide} position={arrowPosition} />
+      <NextButton onClick={nextSlide} position={arrowPosition} />
       <Bullets total={slides.length} current={slide} />
     </SliderContainer>
   );
@@ -98,41 +97,44 @@ const SliderContent = styled.div`
   height: 100%;
 `;
 
-const SliderBox = styled.div`
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 200px;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 15px;
-  border-radius: 4px;
-  font-size: 20px;
-  line-height: 32px;
-  font-weight: 300;
+const Chevron = styled.img.attrs({ src: chevron, alt: "chevron" })`
+  width: 24px;
+  filter: invert(0.6);
+  ${(props) => {
+    switch (props.direction) {
+      case "left":
+        return "transform: rotate(90deg);";
+      case "right":
+        return "transform: rotate(-90deg);";
+      default:
+        return "";
+    }
+  }}
 `;
 
 const Button = styled.div`
   display: none;
   @media (min-width: 787px) {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-    background-color: green;
     cursor: pointer;
   }
 `;
 
-const PreviousButton = styled(Button)`
-  left: 30px;
+const PreviousButton = styled(Button).attrs({
+  children: <Chevron direction="left" />,
+})`
+  left: ${(props) => props.position ?? "30px"};
 `;
 
-const NextButton = styled(Button)`
-  right: 30px;
+const NextButton = styled(Button).attrs({
+  children: <Chevron direction="right" />,
+})`
+  right: ${(props) => props.position ?? "30px"};
 `;
 
 const Bullet = styled.div`
@@ -140,7 +142,7 @@ const Bullet = styled.div`
   height: 10px;
   margin: 8px;
   border-radius: 50%;
-  background-color: ${(props) => (props.active ? "#545456" : "#7f7f82")};
+  background-color: ${(props) => (props.active ? "#000" : "#7f7f82")};
 `;
 
 const BulletContainer = styled.div`
