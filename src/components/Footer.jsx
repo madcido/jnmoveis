@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Box } from "./Box";
 import { Row, Col, Image, Spacer } from "./Common";
-import contato from "../assets/contato.png";
+import contato from "../assets/footer/contato.jpg";
 import facebook from "../assets/facebook.png";
 import instagram from "../assets/instagram.png";
 import whatsapp from "../assets/whatsapp.png";
@@ -12,14 +12,17 @@ export const Footer = () => {
     <Container>
       <Col>
         <Row>
-          <Image src={contato} style={{ flex: "1 0 160px" }} />
+          <Image
+            src={contato}
+            style={{ flex: "1 0 160px", maxWidth: "320px" }}
+          />
           <Spacer size={10} />
           <Row style={{ flex: "1" }}>
-            <FlexBox extraX="150px" extraY="15px" height="105%">
+            <FlexBox extraX="150px" extraY="25px" height="110%" noRight>
               <Col>
                 <p>Gaspar - Santa Catarina</p>
                 <Spacer size={10} />
-                <p style={{ padding: "0 5px" }}>
+                <p style={{ padding: "0 20px" }}>
                   Email
                   <br />
                   marcenariamdfjn@gmail.com
@@ -63,6 +66,7 @@ export const Footer = () => {
 };
 
 const Container = styled(Row)`
+  justify-content: center;
   width: 100%;
   max-width: 720px;
   margin: 0 auto;
@@ -72,9 +76,14 @@ const Container = styled(Row)`
 const Icon = styled.a.attrs({ target: "_blank" })`
   display: block;
   margin: 5px;
+  width: 30px;
+  height: 30px;
   text-decoration: none;
+  border-radius: 6px;
+  overflow: hidden;
   img {
-    width: 40px;
+    width: 100%;
+    opacity: 0.9;
   }
 `;
 

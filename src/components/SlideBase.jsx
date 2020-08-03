@@ -2,23 +2,28 @@ import React from "react";
 import styled from "styled-components";
 import chevron from "../assets/chevron.png";
 
-export const Slide = ({ image, modalContent, children }) => {
+export const ModalSlide = ({ image, title, subtitle, content }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <Container image={image}>
+    <Container
+      image={image}
+      style={{
+        borderRadius: "4px",
+        boxShadow: "3px 3px 6px rgba(0, 0, 0, 0.3)",
+      }}
+    >
       <FloatingBox>
-        {children}
-        {modalContent ? (
-          <OpenButton onClick={() => setIsOpen(true)}>Saiba mais</OpenButton>
-        ) : null}
+        <p>{title}</p>
+        <p>{subtitle}</p>
+        <OpenButton onClick={() => setIsOpen(true)}>Saiba mais</OpenButton>
       </FloatingBox>
       {isOpen ? (
         <>
           <Overlay onClick={() => setIsOpen(false)} />
           <Modal>
             <CloseButton onClick={() => setIsOpen(false)} />
-            {modalContent}
+            {content}
           </Modal>
         </>
       ) : null}
@@ -35,7 +40,33 @@ export const TextSlide = styled.div`
   }
 `;
 
+export const CoveredSlide = ({ image }) => {
+  return (
+    <Container
+      image={image}
+      style={{ boxShadow: "0 3px 6px rgba(0, 0, 0, 0.7)" }}
+    >
+      <Cover>Um novo conceito em móveis planejados</Cover>
+    </Container>
+  );
+};
+
+const Cover = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 100px 30px;
+  font-size: 30px;
+  line-height: 48px;
+  font-weight: 400;
+`;
+
 const Container = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
   background-image: ${({ image }) => `url(${image})`};
@@ -87,13 +118,13 @@ const Modal = styled.div`
   height: 90vh;
   max-height: 600px;
   border-radius: 4px;
-  background-color: #232;
-  box-shadow: 0 4px 20px #111;
+  background-color: #696969;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
 `;
 
-const CloseButton = () => {
+const CloseButton = ({ onClick }) => {
   return (
-    <CloseButtonContainer>
+    <CloseButtonContainer onClick={onClick}>
       <ChevronRight />
       <ChevronLeft />
     </CloseButtonContainer>

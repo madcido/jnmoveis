@@ -13,8 +13,9 @@ export const App = () => {
   return (
     <PageWrapper>
       <Header>
-        <Slider width="100%" height="400px" slides={data.firstSlider} />
+        <Slider width="100%" height="400px" slides={data.firstSlider} noDrive />
       </Header>
+      <Spacer size={20} />
       <Bridge />
       <Spacer size={60} />
       <Section title="Nossos Produtos">
@@ -22,7 +23,7 @@ export const App = () => {
           width="100%"
           height="280px"
           slides={data.secondSlider}
-          autoSlide={false}
+          noSlide
         />
       </Section>
       <Spacer size={60} />

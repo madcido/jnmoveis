@@ -6,24 +6,27 @@ export const Slider = ({
   width = "100%",
   height = "100px",
   slides = ["eeeta pora", "mas q blz"],
-  autoSlide = true,
+  noSlide = false,
   arrowPosition,
+  noDrive = false,
 }) => {
   React.useEffect(() => {
-    if (autoSlide) {
+    if (!noSlide) {
       const id = setInterval(nextSlide, 8000);
       return () => clearInterval(id);
     }
   });
 
   React.useEffect(() => {
-    const currentSlide = slideRef.current;
-    currentSlide.addEventListener("touchstart", register);
-    currentSlide.addEventListener("touchend", calculate);
-    return () => {
-      currentSlide.removeEventListener("touchstart", register);
-      currentSlide.removeEventListener("touchend", calculate);
-    };
+    if (!noDrive) {
+      const currentSlide = slideRef.current;
+      currentSlide.addEventListener("touchstart", register);
+      currentSlide.addEventListener("touchend", calculate);
+      return () => {
+        currentSlide.removeEventListener("touchstart", register);
+        currentSlide.removeEventListener("touchend", calculate);
+      };
+    }
   });
 
   const slideRef = React.useRef();
@@ -67,9 +70,13 @@ export const Slider = ({
   return (
     <SliderContainer width={width} height={height}>
       <SliderContent ref={slideRef}>{slides[slide]}</SliderContent>
-      <PreviousButton onClick={previousSlide} position={arrowPosition} />
-      <NextButton onClick={nextSlide} position={arrowPosition} />
-      <Bullets total={slides.length} current={slide} />
+      {noDrive ? null : (
+        <>
+          <PreviousButton onClick={previousSlide} position={arrowPosition} />
+          <NextButton onClick={nextSlide} position={arrowPosition} />
+          <Bullets total={slides.length} current={slide} />
+        </>
+      )}
     </SliderContainer>
   );
 };
@@ -142,7 +149,7 @@ const Bullet = styled.div`
   height: 10px;
   margin: 8px;
   border-radius: 50%;
-  background-color: ${(props) => (props.active ? "#000" : "#7f7f82")};
+  background-color: ${(props) => (props.active ? "#2f2732" : "#7f7f82")};
 `;
 
 const BulletContainer = styled.div`

@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { Box } from "./Box";
 import { Row, Col, Spacer, Image } from "./Common";
-import ikea from "../assets/ikea.png";
-import jackDaniels from "../assets/jack-daniels.png";
+import bridge1 from "../assets/bridge/bridge1.jpg";
+import bridge2 from "../assets/bridge/bridge2.jpg";
 
 export const Bridge = () => {
   return (
     <Container>
-      <Image src={ikea} style={{ flex: "1 0 50%" }} />
+      <Image src={bridge1} style={{ flex: "1 0 50%" }} />
       <Spacer size={10} />
       <Col>
         <Row style={{ alignItems: "center", flex: "1" }}>
@@ -24,7 +24,7 @@ export const Bridge = () => {
           </Row>
         </Row>
         <Spacer size={10} />
-        <Image src={jackDaniels} style={{ flex: "1 0 130px" }} />
+        <Image src={bridge2} style={{ flex: "1 0 130px" }} />
       </Col>
     </Container>
   );

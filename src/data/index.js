@@ -1,23 +1,42 @@
 import React from "react";
-import { Slide, TextSlide } from "../components/Slide";
-import slide11 from "../assets/slide1-1.png";
-import slide21 from "../assets/slide2-1.png";
+import { CoveredSlide, ModalSlide, TextSlide } from "../components/SlideBase";
+import { Modal1, Modal2, Modal3 } from "../components/ModalContent";
+import slide11 from "../assets/slides/slide11.jpg";
+import slide12 from "../assets/slides/slide12.jpg";
+import slide13 from "../assets/slides/slide13.jpg";
+import slide14 from "../assets/slides/slide14.jpeg";
+import slide15 from "../assets/slides/slide15.jpg";
+import slide21 from "../assets/slides/slide21.png";
+import slide22 from "../assets/slides/slide22.jpg";
+import slide23 from "../assets/slides/slide23.jpg";
 
 export const firstSlider = [
-  <Slide image={slide11}>
-    <p>Um novo conceito em móveis planejados</p>
-  </Slide>,
-  "mim dá mais um",
-  "q beleeeza",
+  <CoveredSlide image={slide11} />,
+  <CoveredSlide image={slide12} />,
+  <CoveredSlide image={slide13} />,
+  <CoveredSlide image={slide14} />,
+  <CoveredSlide image={slide15} />,
 ];
 
 export const secondSlider = [
-  <Slide image={slide21} modalContent="blablabla dentro do modal">
-    <p>Sob Medida</p>
-    <p>Peças totalmente personalizadas</p>
-  </Slide>,
-  "mim dá mais um",
-  "q beleeeza",
+  <ModalSlide
+    image={slide21}
+    title="Sob Medida"
+    subtitle="Peças totalmente personalizadas"
+    content={<Modal1 />}
+  />,
+  <ModalSlide
+    image={slide22}
+    title="Pronta Entrega"
+    subtitle="Consulte nosso catálogo"
+    content={<Modal2 />}
+  />,
+  <ModalSlide
+    image={slide23}
+    title="Faça-você-mesmo"
+    subtitle="Comece ainda hoje um novo projeto"
+    content={<Modal3 />}
+  />,
 ];
 
 export const thirdSlider = [

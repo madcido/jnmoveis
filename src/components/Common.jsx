@@ -24,8 +24,12 @@ export const Image = ({ src, style }) => {
 };
 
 const ImageContainer = styled.div`
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 `;
